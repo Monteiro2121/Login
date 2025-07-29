@@ -1,48 +1,63 @@
-import React from 'react'
-import { useState } from "react";
-import "./Login.css"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
-const login = () => {
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  const emailValido = "teste@gmail.com";
+  const senhaValida = "123456";
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("date"); 'date'
-  }
+
+    if (email === emailValido && senha === senhaValida) {
+      localStorage.setItem("usuario", JSON.stringify({ email }));
+      navigate("/home");
+    } else {
+      alert("Email ou senha inválidos!");
+    }
+  };
 
   return (
     <div>
       <div className="container">
-        <form>
-            <h1>Acesse o sistema</h1>
-            <div className='input-style'>
-                <input type="email" placeholder='Email'
-                onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div className='input-style'> 
-                <input type="passowrd" placeholder='Senha'
-                onChange={(e) => setPassword(e.target.value)}/>
-            </div>
-            <button>Entrar</button>
-            <div className="lembrar">
-                <label>
-                    <input type="checkbox"/>
-                    Lembre de min
-                </label>
-                <a href="#">Esqueceu a senha?</a>
-            </div>
-
-            <div className="registrar">
-              <p>
-                Não tem uma conta? <a href="#">Registrar</a>
-              </p>
-            </div>
+        <form onSubmit={handleSubmit}>
+          <h1>Acesse o sistema</h1>
+          <div className="input-style">
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-style">
+            <input
+              type="password"
+              placeholder="Senha"
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Entrar</button>
+          <div className="lembrar">
+            <label>
+              <input type="checkbox" />
+              Lembre de mim
+            </label>
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+          <div className="registrar">
+            <p>
+              Não tem uma conta? <link to="/registrar">Registrar</link>
+            </p>
+          </div>
         </form>
       </div>
     </div>
-  )
+  );
 }
-
-export default login
