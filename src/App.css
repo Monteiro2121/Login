@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-shadow: black 1px 1px;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 993px;
+  background-image: url("/src/assets/lirio.webp");
+  background-size: cover;
+  background-position: center;
+}
+
