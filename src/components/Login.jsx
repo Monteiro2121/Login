@@ -24,9 +24,9 @@ export default function Login() {
 
   return (
     <div>
-      <div className="container">
+      <div className="containerlogin">
         <form onSubmit={handleSubmit}>
-          <h1>Acesse o sistema</h1>
+          <h1>Login</h1>
           <div className="input-style">
             <input
               type="email"
@@ -53,7 +53,7 @@ export default function Login() {
           </div>
           <div className="registrar">
             <p>
-              Não tem uma conta? <link to="/registrar">Registrar</link>
+              Não tem uma conta? <Link to="/registrar">Registrar</Link>
             </p>
           </div>
         </form>
