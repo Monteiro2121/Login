@@ -6,19 +6,26 @@ import "./Login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [erro, setErro] = useState("");
   const navigate = useNavigate();
-
-  const emailValido = "teste@gmail.com";
-  const senhaValida = "123456";
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (email === emailValido && senha === senhaValida) {
-      localStorage.setItem("usuario", JSON.stringify({ email }));
+    const dadosSalvos = JSON.parse(localStorage.getItem("usuario"));
+
+    const loginValido = dadosSalvos?.email === email && dadosSalvos?.senha === senha;
+
+    setErro(
+      !dadosSalvos
+        ? "Nenhum usuário registrado"
+        : !loginValido
+        ? "Email ou senha inválidos"
+        : ""
+    );
+
+    if (loginValido) {
       navigate("/home");
-    } else {
-      alert("Email ou senha inválidos!");
     }
   };
 
@@ -27,6 +34,8 @@ export default function Login() {
       <div className="containerlogin">
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
+          {erro && <p className="erro-login">{erro}</p>}
+
           <div className="input-style">
             <input
               type="email"
@@ -43,14 +52,14 @@ export default function Login() {
               required
             />
           </div>
-          <button type="submit">Entrar</button>
           <div className="lembrar">
             <label>
               <input type="checkbox" />
               Lembre de mim
             </label>
-            <a href="#">Esqueceu a senha?</a>
+            <Link to="/senha">Esqueceu a senha ?</Link>
           </div>
+          <button type="submit">Entrar</button>
           <div className="registrar">
             <p>
               Não tem uma conta? <Link to="/registrar">Registrar</Link>

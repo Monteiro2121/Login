@@ -34,11 +34,24 @@
     color: rgb(236, 236, 236);
 }
 
-.containerlogin .lembrar{
-    display: flex;
-    justify-content: space-between;
+.erro-login {
+    color: rgb(236, 236, 236);           
+    padding: 10px 15px;
+    margin-bottom: -36px;
+    border-radius: 5px;
+    font-weight: 600;
     font-size: 14px;
-    margin: -75px 0 95px;
+    text-align: center;
+  }
+
+.containerlogin .lembrar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: -18px; 
+  margin-bottom: 65px;
+  padding: 0 10px;
 }
 
 .lembrar label{
@@ -58,29 +71,27 @@
     text-decoration: underline;
 }
 
-.containerlogin button{
-    width: 70%;
+  .containerlogin button {
+    width: 60%;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.137);
     border: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
     color: rgb(236, 236, 236);
+    cursor: pointer;
     font-size: 16px;
-    text-shadow: none;
     font-weight: 600;
-    margin-top: 11%;
-}
+    text-shadow: none;
+    margin: -45px auto 20px;
+    display: block;
+  }
+  
 
 .containerlogin .registrar{
     font-size: 15px;
     text-align: center;
-    margin: 10px 0 6px;
+    margin: 10px 0 -3px;
     text-shadow: none;
 }
 

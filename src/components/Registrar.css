@@ -22,6 +22,10 @@
     margin-bottom: 40px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(100%) saturate(5000%) hue-rotate(180deg) brightness(1);
+}
+
 .input-row{
     display: flex;
     justify-content: space-between;
@@ -59,7 +63,7 @@
   }
 
   .input-style-senha{
-    width: 25%;
+    width: 30%;
     height: 50px;
   }
 
@@ -79,7 +83,7 @@
 }
 
 .containerregister button{
-    width: 70%;
+    width: 39%;
     height: 50px;
     display: flex;
     justify-content: center;
