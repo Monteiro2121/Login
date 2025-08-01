@@ -5,13 +5,21 @@
   box-sizing: border-box;
 }
 
-.App{
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 993px;
+  min-height: 100vh;
   background-image: url("/src/assets/aranha.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
+/*Editar o preenchimento automatico do navegador*/
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #e0f0ff00 inset !important;
+  -webkit-text-fill-color: rgb(236, 236, 236) !important; 
+  font-weight: normal !important; 
+  transition: background-color 5000s ease-in-out 0s; 
+}

@@ -23,7 +23,7 @@
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1) sepia(100%) saturate(5000%) hue-rotate(180deg) brightness(1);
+  filter: invert(1) sepia(100%) saturate(5000%) hue-rotate(180deg) brightness(10);
 }
 
 .input-row{
@@ -63,7 +63,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .input-style-senha{
-    width: 30%;
+    width: 34%;
     height: 50px;
   }
 
